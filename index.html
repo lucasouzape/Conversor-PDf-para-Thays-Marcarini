@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thata eu te amo — Conversor de PDF</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Thata eu te amo</h1>
+    <p>Conversor de PDF para imagens PNG</p>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <label for="fileInput" class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept="application/pdf,.pdf" hidden />
+        <span class="dropzone-icon">📄</span>
+        <span class="dropzone-text">Clique ou arraste um PDF aqui</span>
+        <span class="dropzone-hint">Apenas arquivos .pdf</span>
+      </label>
+
+      <div class="status" id="status" hidden>
+        <div class="status-row">
+          <span id="statusText">Pronto</span>
+          <span id="percentText">0%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="file-info" id="fileInfo" hidden>
+        <strong id="fileName"></strong>
+        <span id="fileMeta"></span>
+      </div>
+
+      <button id="convertBtn" class="btn" disabled>Converter para PNG</button>
+    </section>
+
+    <section class="results" id="results" hidden>
+      <div class="results-head">
+        <h2>Páginas convertidas</h2>
+        <button id="downloadAll" class="btn btn-ghost btn-small">Baixar todas</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+  </main>
+
+  <footer>Feito com ❤️ para Thata</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
