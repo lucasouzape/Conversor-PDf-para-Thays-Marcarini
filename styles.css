@@ -28,6 +28,7 @@ body {
   flex-direction: column;
 }
 
+/* ---------- HEADER ---------- */
 .hero {
   position: relative;
   overflow: hidden;
@@ -70,6 +71,7 @@ body {
   opacity: 0.95;
 }
 
+/* ---------- LAYOUT ---------- */
 .container {
   width: 100%;
   max-width: 980px;
@@ -88,6 +90,7 @@ body {
   gap: 20px;
 }
 
+/* ---------- DROPZONE ---------- */
 .dropzone {
   display: flex;
   flex-direction: column;
@@ -126,6 +129,79 @@ body {
   color: var(--muted);
 }
 
+/* ---------- SELETOR DE FORMATO ---------- */
+.format-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.format-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pink-dark);
+}
+
+.format-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.format-option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 2px solid var(--pink-soft);
+  border-radius: 999px;
+  background: #fffafc;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.15s;
+  user-select: none;
+}
+
+.format-option:hover {
+  border-color: var(--pink);
+  background: #fff0f6;
+}
+
+.format-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.format-option:has(input:checked) {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(255, 77, 148, 0.3);
+}
+
+.format-option:has(input:checked) span {
+  color: var(--white);
+}
+
+.format-note {
+  padding: 12px 16px;
+  background: #fffbe6;
+  border-left: 4px solid #f5c518;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: #6b5a00;
+  line-height: 1.5;
+}
+
+.format-note strong {
+  color: #4a3d00;
+}
+
+/* ---------- STATUS / PROGRESSO ---------- */
 .status {
   display: flex;
   flex-direction: column;
@@ -160,6 +236,7 @@ body {
   transition: width 0.25s ease;
 }
 
+/* ---------- INFO DO ARQUIVO ---------- */
 .file-info {
   display: flex;
   flex-wrap: wrap;
@@ -181,6 +258,7 @@ body {
   color: var(--muted);
 }
 
+/* ---------- BOTÕES ---------- */
 .btn {
   align-self: flex-start;
   border: none;
@@ -231,6 +309,7 @@ body {
   box-shadow: 0 8px 20px rgba(255, 77, 148, 0.35);
 }
 
+/* ---------- RESULTADOS ---------- */
 .results {
   margin-top: 40px;
 }
@@ -281,6 +360,37 @@ body {
   color: var(--muted);
 }
 
+/* ---------- CARD DE SUCESSO (DOC) ---------- */
+.doc-card {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 34px 24px;
+  background: linear-gradient(135deg, #fff0f6, #ffe1ee);
+  border: 2px solid var(--pink-soft);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.doc-card .doc-icon {
+  font-size: 3.4rem;
+  line-height: 1;
+}
+
+.doc-card h3 {
+  font-size: 1.2rem;
+  color: var(--pink-dark);
+}
+
+.doc-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 460px;
+}
+
+/* ---------- FOOTER ---------- */
 footer {
   text-align: center;
   padding: 28px 20px;
@@ -288,6 +398,7 @@ footer {
   color: var(--muted);
 }
 
+/* ---------- RESPONSIVO ---------- */
 @media (max-width: 560px) {
   .hero {
     padding: 46px 16px 40px;

@@ -10,7 +10,7 @@
 
   <header class="hero">
     <h1>Thata eu te amo</h1>
-    <p>Conversor de PDF para imagens PNG</p>
+    <p>Conversor de PDF para PNG ou Word (.doc)</p>
   </header>
 
   <main class="container">
@@ -22,6 +22,24 @@
         <span class="dropzone-text">Clique ou arraste um PDF aqui</span>
         <span class="dropzone-hint">Apenas arquivos .pdf</span>
       </label>
+
+      <div class="format-selector">
+        <span class="format-label">Converter para:</span>
+        <div class="format-options">
+          <label class="format-option">
+            <input type="radio" name="format" value="png" checked />
+            <span>🖼️ PNG (imagens)</span>
+          </label>
+          <label class="format-option">
+            <input type="radio" name="format" value="doc" />
+            <span>📝 Word (.doc)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="format-note" id="formatNote" hidden>
+        ℹ️ A conversão para Word extrai o <strong>texto</strong> do PDF. Imagens, cores e formatação original não são preservadas. Cada página vira uma seção do documento.
+      </div>
 
       <div class="status" id="status" hidden>
         <div class="status-row">
@@ -43,7 +61,7 @@
 
     <section class="results" id="results" hidden>
       <div class="results-head">
-        <h2>Páginas convertidas</h2>
+        <h2 id="resultsTitle">Páginas convertidas</h2>
         <button id="downloadAll" class="btn btn-ghost btn-small">Baixar todas</button>
       </div>
       <div class="grid" id="grid"></div>
